@@ -423,8 +423,6 @@ p {
   display: flex;
   justify-content: center; /* Центрування по горизонталі */
   align-items: center; /* Центрування по вертикалі */
-  height: 100vh; /* Висота на весь екран */
-  width: 100vw; /* Ширина на весь екран */
   box-sizing: border-box; /* Врахування padding для контейнера */
 }
 
