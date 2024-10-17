@@ -1,0 +1,955 @@
+<!DOCTYPE html>
+<html lang="uk">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Макет сторінки</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="first">
+        <div class="text-content">
+          <p class="p-content">
+            Lorem Ipsum is simply dummy text of the printing and typesetting
+            industry. Lorem Ipsum has been the industry's standard dummy text
+            ever since the 1500s, when an unknown printer took a galley of type
+            and scrambled it to make a type specimen book.
+          </p>
+          <p class="p-content">
+            Lorem Ipsum is simply dummy text of the printing and typesetting
+            industry. Lorem Ipsum has been the industry's standard dummy text
+            ever since the 1500s, when an unknown printer took a galley of type
+            and scrambled it to make a type specimen book.
+          </p>
+        </div>
+        <div class="image-content">
+          <img src="/img/image.png" alt="Example Image" class="first-image" />
+        </div>
+      </div>
+      <div class="second">
+        <div class="section">
+          <div class="section-content original">
+            <h2>Lorem Ipsum has been the industry's</h2>
+            <p>
+              Lorem Ipsum is simply dummy text of the printing and typesetting
+              industry. Lorem Ipsum has been the industry's standard dummy text
+              ever since the 1500s, when an unknown printer took a galley of
+              type and scrambled it to make a type specimen book.
+            </p>
+          </div>
+          <img src="/img/1.png" alt="Image" class="img-1" />
+        </div>
+
+        <div class="section reverse">
+          <div class="section-content reversed">
+            <h2>Lorem Ipsum has been the industry's</h2>
+            <p>
+              Lorem Ipsum is simply dummy text of the printing and typesetting
+              industry. Lorem Ipsum has been the industry's standard dummy text
+              ever since the 1500s, when an unknown printer took a galley of
+              type and scrambled it to make a type specimen book.
+            </p>
+          </div>
+          <img src="/img/2.png" alt="Image" class="img-2" />
+        </div>
+      </div>
+      <div class="help-section">
+        <div
+          class="video-wrapper"
+          data-youtube-url="https://www.youtube.com/watch?v=v0qIlyCuA_o"
+        >
+          <img src="/img/3.png" alt="Video Placeholder" class="video-image" />
+
+          <div class="play-button">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="67"
+              height="67"
+              viewBox="0 0 67 67"
+              fill="none"
+            >
+              <circle cx="33.5" cy="33.5" r="33.5" fill="white" />
+              <path
+                d="M43 32.2679C44.3333 33.0377 44.3333 34.9623 43 35.7321L31 42.6603C29.6667 43.4301 28 42.4678 28 40.9282L28 27.0718C28 25.5322 29.6667 24.5699 31 25.3397L43 32.2679Z"
+                fill="#30485F"
+              />
+            </svg>
+          </div>
+
+          <iframe
+            src=""
+            frameborder="0"
+            allow="autoplay; encrypted-media"
+            allowfullscreen
+            class="youtube-video"
+          ></iframe>
+        </div>
+
+        <script src="https://www.youtube.com/iframe_api"></script>
+        <script>
+          function getYouTubeIdFromUrl(url) {
+            const regExp =
+              /^.*(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|\&v=)([^#\&\?]*).*/;
+            const match = url.match(regExp);
+            return match && match[2].length === 11 ? match[2] : null;
+          }
+
+          document
+            .querySelector(".play-button")
+            .addEventListener("click", function () {
+              const container = this.closest(".video-wrapper");
+              const youtubeUrl = container.getAttribute("data-youtube-url"); // Отримуємо URL відео з атрибута
+              const videoId = getYouTubeIdFromUrl(youtubeUrl);
+
+              if (videoId) {
+                const iframe = container.querySelector("iframe");
+                iframe.src = `https://www.youtube.com/embed/${videoId}?autoplay=1`;
+                iframe.style.display = "block";
+                container.querySelector(".video-image").style.display = "none"; // Приховуємо зображення
+                container.querySelector(".play-button").style.display = "none"; // Приховуємо кнопку відтворення
+              } else {
+                console.error("Неправильне посилання на YouTube відео");
+              }
+            });
+        </script>
+        <style>
+          .video-wrapper {
+            position: relative;
+            width: 1240px;
+            height: 600px;
+            margin: 0 auto;
+          }
+
+          .video-image,
+          .youtube-video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+          }
+
+          .play-button {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: none;
+            border: none;
+            cursor: pointer;
+          }
+
+          .youtube-video {
+            display: none;
+          }
+
+          @media (max-width: 768px) {
+            .video-wrapper {
+              width: 100%;
+              height: auto;
+            }
+
+            .play-button svg {
+              width: 40px;
+              height: 40px;
+            }
+          }
+        </style>
+        <h2>Ви можете допомогти</h2>
+        <p class="description">
+          Lorem Ipsum is simply dummy text of the printing and typesetting
+          industry.
+        </p>
+
+        <div class="cards">
+          <div class="card">
+            <div class="card-icon">
+              <div class="icon-background">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="32"
+                  height="32"
+                  viewBox="0 0 32 32"
+                  fill="none"
+                >
+                  <path
+                    d="M28.085 2.12711C26.4377 1.40031 24.2668 1 21.9722 1C19.6776 1 17.5067 1.40031 15.8593 2.12711C13.9833 2.95481 12.9501 4.14263 12.9501 5.47172V13.0461C12.0802 12.7722 11.1549 12.6241 10.1958 12.6241C5.12949 12.6241 1.00781 16.7458 1.00781 21.8121C1.00781 26.8783 5.12949 31 10.1958 31C13.6812 31 16.7194 29.0492 18.2762 26.1822C19.4279 26.4253 20.6908 26.5529 21.9722 26.5529C24.2668 26.5529 26.4377 26.1526 28.0851 25.4258C29.9611 24.5981 30.9943 23.4103 30.9943 22.0812V5.47172C30.9943 4.14263 29.9611 2.95481 28.085 2.12711ZM16.5689 3.73534C17.9976 3.10499 19.9166 2.75782 21.9722 2.75782C24.0279 2.75782 25.9468 3.10499 27.3755 3.73534C28.5234 4.24177 29.2365 4.90716 29.2365 5.47172C29.2365 6.03627 28.5234 6.7016 27.3755 7.20809C25.9468 7.83844 24.0279 8.18561 21.9722 8.18561C19.9166 8.18561 17.9976 7.83844 16.5689 7.20809C15.4211 6.7016 14.708 6.03633 14.708 5.47172C14.708 4.90711 15.4211 4.24177 16.5689 3.73534ZM10.1957 29.2422C6.09869 29.2422 2.76557 25.9091 2.76557 21.8121C2.76557 17.715 6.09869 14.3819 10.1957 14.3819C14.2927 14.3819 17.6258 17.715 17.6258 21.8121C17.6258 25.9091 14.2927 29.2422 10.1957 29.2422ZM27.3755 23.8176C25.9468 24.4479 24.0279 24.7951 21.9722 24.7951C20.9347 24.7951 19.9152 24.7038 18.9736 24.5289C19.2013 23.7948 19.3388 23.0214 19.3741 22.222C20.2088 22.3397 21.0781 22.4005 21.9723 22.4005C24.2669 22.4005 26.4378 22.0002 28.0851 21.2734C28.5139 21.0842 28.8981 20.8761 29.2365 20.6519V22.0812C29.2365 22.6458 28.5234 23.3111 27.3755 23.8176ZM27.3755 19.6652C25.9468 20.2955 24.0279 20.6427 21.9722 20.6427C21.0369 20.6427 20.1346 20.5703 19.2797 20.4296C19.1462 19.5485 18.8866 18.7082 18.5207 17.9272C19.6016 18.1372 20.7747 18.2481 21.9722 18.2481C24.2668 18.2481 26.4377 17.8479 28.0851 17.1211C28.5139 16.9319 28.898 16.7237 29.2365 16.4995V17.9288C29.2365 18.4934 28.5234 19.1587 27.3755 19.6652ZM27.3755 15.5128C25.9468 16.1432 24.0279 16.4904 21.9722 16.4904C20.1548 16.4904 18.42 16.2133 17.0576 15.7093C16.386 14.955 15.5925 14.3118 14.708 13.811V12.3472C15.0464 12.5714 15.4306 12.7796 15.8593 12.9687C17.5067 13.6955 19.6776 14.0958 21.9722 14.0958C24.2668 14.0958 26.4377 13.6955 28.0851 12.9687C28.5139 12.7795 28.898 12.5714 29.2365 12.3472V13.7765C29.2365 14.341 28.5234 15.0064 27.3755 15.5128ZM27.3755 11.3604C25.9468 11.9908 24.0279 12.3379 21.9722 12.3379C19.9166 12.3379 17.9976 11.9908 16.5689 11.3604C15.4211 10.854 14.708 10.1886 14.708 9.62404V8.19476C15.0464 8.41894 15.4306 8.62712 15.8593 8.81632C17.5067 9.54312 19.6776 9.94337 21.9722 9.94337C24.2668 9.94337 26.4377 9.54312 28.0851 8.81632C28.5139 8.62712 28.898 8.41894 29.2365 8.19476V9.62404C29.2365 10.1886 28.5234 10.854 27.3755 11.3604Z"
+                    fill="#F3B745"
+                  />
+                </svg>
+              </div>
+            </div>
+            <div class="card-content">
+              <h3>Фінансово</h3>
+              <p>
+                Ви можете надіслати будь-яку суму одноразовим переказом, або
+                оформити підписку на спонсорську допомогу та щомісячно
+                допомагати нам сумою, яка може дорівнювати квитку до кінотеатру
+                або ж чомусь вагомішому – залежно від вашої можливості. Це
+                забезпечить наш стабільний розвиток та вашу постійну підтримку
+                Ukraїner.
+              </p>
+              <button class="btn">
+                <a
+                  href="https://example.com/donate"
+                  class="btn"
+                  style="text-decoration: none"
+                  >Фондувати</a
+                >
+              </button>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-icon">
+              <div class="icon-background">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="32"
+                  height="32"
+                  viewBox="0 0 32 32"
+                  fill="none"
+                >
+                  <g clip-path="url(#clip0_204_1026)">
+                    <path
+                      d="M18.529 21.0374C17.7465 20.4915 16.9103 20.0466 16.0358 19.7068C17.1991 18.6494 17.9709 17.1682 18.1051 15.51C19.8693 13.791 22.1818 12.8486 24.6608 12.8486C26.5961 12.8486 28.4543 13.4314 30.0348 14.5337C30.6012 14.9287 31.38 14.79 31.7751 14.2236C32.1698 13.6575 32.0312 12.8784 31.465 12.4836C30.6825 11.9377 29.8461 11.4932 28.9716 11.1531C30.2553 9.98633 31.0624 8.30396 31.0624 6.43677C31.0624 2.92188 28.203 0.0625 24.6881 0.0625C21.1735 0.0625 18.3141 2.92188 18.3141 6.43677C18.3141 8.29639 19.1147 9.97266 20.3896 11.1389C20.215 11.2061 20.0414 11.2771 19.8695 11.3528C19.0873 11.697 18.352 12.1204 17.6681 12.6174C16.725 10.2744 14.4289 8.61621 11.7524 8.61621C8.23771 8.61621 5.37809 11.4756 5.37809 14.9902C5.37809 16.8447 6.17423 18.5164 7.4423 19.6821C4.05192 20.9524 1.30289 23.6807 0.183752 27.1602C-0.187342 28.314 0.00919104 29.5376 0.723058 30.5173C1.43693 31.4968 2.54142 32.0586 3.75333 32.0586H14.6271C15.3173 32.0586 15.8769 31.499 15.8769 30.8086C15.8769 30.1184 15.3173 29.5588 14.6271 29.5588H3.75333C3.34928 29.5588 2.98111 29.3716 2.74308 29.0449C2.50504 28.7183 2.43961 28.3103 2.56315 27.9255C3.7985 24.0847 7.56608 21.4024 11.725 21.4024C13.6601 21.4024 15.5185 21.9851 17.099 23.0874C17.6652 23.4824 18.4442 23.3435 18.8393 22.7774C19.234 22.2112 19.0954 21.4321 18.529 21.0374ZM24.6881 2.56226C26.8246 2.56226 28.5627 4.30029 28.5627 6.43677C28.5627 8.573 26.8246 10.3113 24.6881 10.3113C22.5519 10.3113 20.8136 8.573 20.8136 6.43677C20.8136 4.30029 22.5519 2.56226 24.6881 2.56226ZM11.7524 11.1157C13.8888 11.1157 15.6269 12.854 15.6269 14.9902C15.6269 17.1267 13.8888 18.8648 11.7524 18.8648C9.61588 18.8648 7.87784 17.1267 7.87784 14.9902C7.87784 12.854 9.61588 11.1157 11.7524 11.1157ZM31.9999 26.1218C31.9999 26.812 31.4403 27.3716 30.7499 27.3716H27.3129V30.8086C27.3129 31.499 26.7533 32.0586 26.0631 32.0586C25.3727 32.0586 24.8131 31.499 24.8131 30.8086V27.3716H21.3761C20.6859 27.3716 20.1264 26.812 20.1264 26.1218C20.1264 25.4314 20.6859 24.8718 21.3761 24.8718H24.8131V21.4348C24.8131 20.7446 25.3727 20.1851 26.0631 20.1851C26.7533 20.1851 27.3129 20.7446 27.3129 21.4348V24.8718H30.7499C31.4403 24.8718 31.9999 25.4314 31.9999 26.1218Z"
+                      fill="#F3B745"
+                    />
+                  </g>
+                  <defs>
+                    <clipPath id="clip0_204_1026">
+                      <rect width="32" height="32" fill="white" />
+                    </clipPath>
+                  </defs>
+                </svg>
+              </div>
+            </div>
+            <div class="card-content">
+              <h3>Долучитись до команди</h3>
+              <p>
+                Оскільки нам постійно бракує часу та енергії, то ми завжди
+                щасливі долучати нових волонтерів. Якщо ви маєте змогу
+                допомагати нам із розшифровкою відеоматеріалів, перекладом та
+                коректурою тексту, монтажем відео чи субтитруванням або ж готові
+                провести час у експедиції як фотограф чи відеограф - заповнюйте
+                заявку та приєднуйтеся до команди.
+              </p>
+              <button class="btn">
+                <a
+                  href="https://example.com/join-team"
+                  class="btn"
+                  style="text-decoration: none"
+                  >Приєднатись</a
+                >
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="support-container">
+        <h2>Способи підтримати нас</h2>
+        <div class="support-details">
+          <div class="buttons">
+            <button class="currency-button active">Переказ у гривні</button>
+            <button class="currency-button">Переказ у доларах</button>
+            <button class="currency-button">Переказ у євро</button>
+          </div>
+
+          <div class="details-container">
+            <div class="details">
+              <div class="detail-item">
+                <span class="detail-label">Одержувач:</span>
+                <span class="detail-value"
+                  >ГРОМАДСЬКА ОРГАНІЗАЦІЯ “БУДУЄМО УКРАЇНУ РАЗОМ”</span
+                >
+                <button class="copy-button">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="19"
+                    height="18"
+                    viewBox="0 0 19 18"
+                    fill="none"
+                    class="copy-icon"
+                  >
+                    <path
+                      d="M15.2344 2.25H7.73438C6.90595 2.25 6.23438 2.92157 6.23438 3.75V11.25C6.23438 12.0784 6.90595 12.75 7.73438 12.75H15.2344C16.0628 12.75 16.7344 12.0784 16.7344 11.25V3.75C16.7344 2.92157 16.0628 2.25 15.2344 2.25Z"
+                      stroke="#333333"
+                      stroke-width="1.5"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                    <path
+                      d="M13.7344 12.75V14.25C13.7344 15.0784 13.0628 15.75 12.2344 15.75H4.73438C3.90595 15.75 3.23438 15.0784 3.23438 14.25V6.75C3.23438 5.92157 3.90595 5.25 4.73438 5.25H6.23438"
+                      stroke="#333333"
+                      stroke-width="1.5"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                  Скопіювати
+                </button>
+              </div>
+
+              <div class="detail-item">
+                <span class="detail-label">Код ЄДРПОУ:</span>
+                <span class="detail-value">44591761</span>
+                <button class="copy-button">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="19"
+                    height="18"
+                    viewBox="0 0 19 18"
+                    fill="none"
+                    class="copy-icon"
+                  >
+                    <path
+                      d="M15.2344 2.25H7.73438C6.90595 2.25 6.23438 2.92157 6.23438 3.75V11.25C6.23438 12.0784 6.90595 12.75 7.73438 12.75H15.2344C16.0628 12.75 16.7344 12.0784 16.7344 11.25V3.75C16.7344 2.92157 16.0628 2.25 15.2344 2.25Z"
+                      stroke="#333333"
+                      stroke-width="1.5"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                    <path
+                      d="M13.7344 12.75V14.25C13.7344 15.0784 13.0628 15.75 12.2344 15.75H4.73438C3.90595 15.75 3.23438 15.0784 3.23438 14.25V6.75C3.23438 5.92157 3.90595 5.25 4.73438 5.25H6.23438"
+                      stroke="#333333"
+                      stroke-width="1.5"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                  Скопіювати
+                </button>
+              </div>
+              <div class="detail-item">
+                <span class="detail-label">Код Банку-одержувача:</span>
+                <span class="detail-value">325365</span>
+                <button class="copy-button">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="19"
+                    height="18"
+                    viewBox="0 0 19 18"
+                    fill="none"
+                    class="copy-icon"
+                  >
+                    <path
+                      d="M15.2344 2.25H7.73438C6.90595 2.25 6.23438 2.92157 6.23438 3.75V11.25C6.23438 12.0784 6.90595 12.75 7.73438 12.75H15.2344C16.0628 12.75 16.7344 12.0784 16.7344 11.25V3.75C16.7344 2.92157 16.0628 2.25 15.2344 2.25Z"
+                      stroke="#333333"
+                      stroke-width="1.5"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                    <path
+                      d="M13.7344 12.75V14.25C13.7344 15.0784 13.0628 15.75 12.2344 15.75H4.73438C3.90595 15.75 3.23438 15.0784 3.23438 14.25V6.75C3.23438 5.92157 3.90595 5.25 4.73438 5.25H6.23438"
+                      stroke="#333333"
+                      stroke-width="1.5"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                  Скопіювати
+                </button>
+              </div>
+              <div class="detail-item">
+                <span class="detail-label">Рахунок одержувача:</span>
+                <span class="detail-value">UA103253650000000260080034583</span>
+                <button class="copy-button">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="19"
+                    height="18"
+                    viewBox="0 0 19 18"
+                    fill="none"
+                    class="copy-icon"
+                  >
+                    <path
+                      d="M15.2344 2.25H7.73438C6.90595 2.25 6.23438 2.92157 6.23438 3.75V11.25C6.23438 12.0784 6.90595 12.75 7.73438 12.75H15.2344C16.0628 12.75 16.7344 12.0784 16.7344 11.25V3.75C16.7344 2.92157 16.0628 2.25 15.2344 2.25Z"
+                      stroke="#333333"
+                      stroke-width="1.5"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                    <path
+                      d="M13.7344 12.75V14.25C13.7344 15.0784 13.0628 15.75 12.2344 15.75H4.73438C3.90595 15.75 3.23438 15.0784 3.23438 14.25V6.75C3.23438 5.92157 3.90595 5.25 4.73438 5.25H6.23438"
+                      stroke="#333333"
+                      stroke-width="1.5"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                  Скопіювати
+                </button>
+              </div>
+              <div class="detail-item">
+                <span class="detail-label">Призначення платежу:</span>
+                <span class="detail-value">Благодійний внесок</span>
+                <button class="copy-button">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="19"
+                    height="18"
+                    viewBox="0 0 19 18"
+                    fill="none"
+                    class="copy-icon"
+                  >
+                    <path
+                      d="M15.2344 2.25H7.73438C6.90595 2.25 6.23438 2.92157 6.23438 3.75V11.25C6.23438 12.0784 6.90595 12.75 7.73438 12.75H15.2344C16.0628 12.75 16.7344 12.0784 16.7344 11.25V3.75C16.7344 2.92157 16.0628 2.25 15.2344 2.25Z"
+                      stroke="#333333"
+                      stroke-width="1.5"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                    <path
+                      d="M13.7344 12.75V14.25C13.7344 15.0784 13.0628 15.75 12.2344 15.75H4.73438C3.90595 15.75 3.23438 15.0784 3.23438 14.25V6.75C3.23438 5.92157 3.90595 5.25 4.73438 5.25H6.23438"
+                      stroke="#333333"
+                      stroke-width="1.5"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                  Скопіювати
+                </button>
+              </div>
+              <div class="copy-all">
+                <button class="copy-all-button">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="19"
+                    height="18"
+                    viewBox="0 0 19 18"
+                    fill="none"
+                    class="copy-icon"
+                  >
+                    <path
+                      d="M15.2344 2.25H7.73438C6.90595 2.25 6.23438 2.92157 6.23438 3.75V11.25C6.23438 12.0784 6.90595 12.75 7.73438 12.75H15.2344C16.0628 12.75 16.7344 12.0784 16.7344 11.25V3.75C16.7344 2.92157 16.0628 2.25 15.2344 2.25Z"
+                      stroke="#333333"
+                      stroke-width="1.5"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                    <path
+                      d="M13.7344 12.75V14.25C13.7344 15.0784 13.0628 15.75 12.2344 15.75H4.73438C3.90595 15.75 3.23438 15.0784 3.23438 14.25V6.75C3.23438 5.92157 3.90595 5.25 4.73438 5.25H6.23438"
+                      stroke="#333333"
+                      stroke-width="1.5"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                  СКОПІЮВАТИ ВСЕ
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="details-container">
+            <div class="details">
+              <div class="detail-item">
+                <span class="detail-label">Одержувач:</span>
+                <span class="detail-value"
+                  >ГРОМАДСЬКА ОРГАНІЗАЦІЯ “БУДУЄМО УКРАЇНУ РАЗОМ”</span
+                >
+                <button class="copy-button">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="19"
+                    height="18"
+                    viewBox="0 0 19 18"
+                    fill="none"
+                    class="copy-icon"
+                  >
+                    <path
+                      d="M15.2344 2.25H7.73438C6.90595 2.25 6.23438 2.92157 6.23438 3.75V11.25C6.23438 12.0784 6.90595 12.75 7.73438 12.75H15.2344C16.0628 12.75 16.7344 12.0784 16.7344 11.25V3.75C16.7344 2.92157 16.0628 2.25 15.2344 2.25Z"
+                      stroke="#333333"
+                      stroke-width="1.5"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                    <path
+                      d="M13.7344 12.75V14.25C13.7344 15.0784 13.0628 15.75 12.2344 15.75H4.73438C3.90595 15.75 3.23438 15.0784 3.23438 14.25V6.75C3.23438 5.92157 3.90595 5.25 4.73438 5.25H6.23438"
+                      stroke="#333333"
+                      stroke-width="1.5"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                  Скопіювати
+                </button>
+              </div>
+
+              <div class="detail-item">
+                <span class="detail-label">Код ЄДРПОУ:</span>
+                <span class="detail-value">44591761</span>
+                <button class="copy-button">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="19"
+                    height="18"
+                    viewBox="0 0 19 18"
+                    fill="none"
+                    class="copy-icon"
+                  >
+                    <path
+                      d="M15.2344 2.25H7.73438C6.90595 2.25 6.23438 2.92157 6.23438 3.75V11.25C6.23438 12.0784 6.90595 12.75 7.73438 12.75H15.2344C16.0628 12.75 16.7344 12.0784 16.7344 11.25V3.75C16.7344 2.92157 16.0628 2.25 15.2344 2.25Z"
+                      stroke="#333333"
+                      stroke-width="1.5"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                    <path
+                      d="M13.7344 12.75V14.25C13.7344 15.0784 13.0628 15.75 12.2344 15.75H4.73438C3.90595 15.75 3.23438 15.0784 3.23438 14.25V6.75C3.23438 5.92157 3.90595 5.25 4.73438 5.25H6.23438"
+                      stroke="#333333"
+                      stroke-width="1.5"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                  Скопіювати
+                </button>
+              </div>
+              <div class="detail-item">
+                <span class="detail-label">Код Банку-одержувача:</span>
+                <span class="detail-value">325365</span>
+                <button class="copy-button">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="19"
+                    height="18"
+                    viewBox="0 0 19 18"
+                    fill="none"
+                    class="copy-icon"
+                  >
+                    <path
+                      d="M15.2344 2.25H7.73438C6.90595 2.25 6.23438 2.92157 6.23438 3.75V11.25C6.23438 12.0784 6.90595 12.75 7.73438 12.75H15.2344C16.0628 12.75 16.7344 12.0784 16.7344 11.25V3.75C16.7344 2.92157 16.0628 2.25 15.2344 2.25Z"
+                      stroke="#333333"
+                      stroke-width="1.5"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                    <path
+                      d="M13.7344 12.75V14.25C13.7344 15.0784 13.0628 15.75 12.2344 15.75H4.73438C3.90595 15.75 3.23438 15.0784 3.23438 14.25V6.75C3.23438 5.92157 3.90595 5.25 4.73438 5.25H6.23438"
+                      stroke="#333333"
+                      stroke-width="1.5"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                  Скопіювати
+                </button>
+              </div>
+              <div class="detail-item">
+                <span class="detail-label">Рахунок одержувача:</span>
+                <span class="detail-value">UA103253650000000260080034583</span>
+                <button class="copy-button">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="19"
+                    height="18"
+                    viewBox="0 0 19 18"
+                    fill="none"
+                    class="copy-icon"
+                  >
+                    <path
+                      d="M15.2344 2.25H7.73438C6.90595 2.25 6.23438 2.92157 6.23438 3.75V11.25C6.23438 12.0784 6.90595 12.75 7.73438 12.75H15.2344C16.0628 12.75 16.7344 12.0784 16.7344 11.25V3.75C16.7344 2.92157 16.0628 2.25 15.2344 2.25Z"
+                      stroke="#333333"
+                      stroke-width="1.5"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                    <path
+                      d="M13.7344 12.75V14.25C13.7344 15.0784 13.0628 15.75 12.2344 15.75H4.73438C3.90595 15.75 3.23438 15.0784 3.23438 14.25V6.75C3.23438 5.92157 3.90595 5.25 4.73438 5.25H6.23438"
+                      stroke="#333333"
+                      stroke-width="1.5"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                  Скопіювати
+                </button>
+              </div>
+              <div class="detail-item">
+                <span class="detail-label">Призначення платежу:</span>
+                <span class="detail-value">Благодійний внесок</span>
+                <button class="copy-button">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="19"
+                    height="18"
+                    viewBox="0 0 19 18"
+                    fill="none"
+                    class="copy-icon"
+                  >
+                    <path
+                      d="M15.2344 2.25H7.73438C6.90595 2.25 6.23438 2.92157 6.23438 3.75V11.25C6.23438 12.0784 6.90595 12.75 7.73438 12.75H15.2344C16.0628 12.75 16.7344 12.0784 16.7344 11.25V3.75C16.7344 2.92157 16.0628 2.25 15.2344 2.25Z"
+                      stroke="#333333"
+                      stroke-width="1.5"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                    <path
+                      d="M13.7344 12.75V14.25C13.7344 15.0784 13.0628 15.75 12.2344 15.75H4.73438C3.90595 15.75 3.23438 15.0784 3.23438 14.25V6.75C3.23438 5.92157 3.90595 5.25 4.73438 5.25H6.23438"
+                      stroke="#333333"
+                      stroke-width="1.5"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                  Скопіювати
+                </button>
+              </div>
+              <div class="copy-all">
+                <button class="copy-all-button">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="19"
+                    height="18"
+                    viewBox="0 0 19 18"
+                    fill="none"
+                    class="copy-icon"
+                  >
+                    <path
+                      d="M15.2344 2.25H7.73438C6.90595 2.25 6.23438 2.92157 6.23438 3.75V11.25C6.23438 12.0784 6.90595 12.75 7.73438 12.75H15.2344C16.0628 12.75 16.7344 12.0784 16.7344 11.25V3.75C16.7344 2.92157 16.0628 2.25 15.2344 2.25Z"
+                      stroke="#333333"
+                      stroke-width="1.5"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                    <path
+                      d="M13.7344 12.75V14.25C13.7344 15.0784 13.0628 15.75 12.2344 15.75H4.73438C3.90595 15.75 3.23438 15.0784 3.23438 14.25V6.75C3.23438 5.92157 3.90595 5.25 4.73438 5.25H6.23438"
+                      stroke="#333333"
+                      stroke-width="1.5"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                  СКОПІЮВАТИ ВСЕ
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="details-container">
+            <div class="details">
+              <div class="detail-item">
+                <span class="detail-label">Одержувач:</span>
+                <span class="detail-value"
+                  >ГРОМАДСЬКА ОРГАНІЗАЦІЯ “БУДУЄМО УКРАЇНУ РАЗОМ”</span
+                >
+                <button class="copy-button">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="19"
+                    height="18"
+                    viewBox="0 0 19 18"
+                    fill="none"
+                    class="copy-icon"
+                  >
+                    <path
+                      d="M15.2344 2.25H7.73438C6.90595 2.25 6.23438 2.92157 6.23438 3.75V11.25C6.23438 12.0784 6.90595 12.75 7.73438 12.75H15.2344C16.0628 12.75 16.7344 12.0784 16.7344 11.25V3.75C16.7344 2.92157 16.0628 2.25 15.2344 2.25Z"
+                      stroke="#333333"
+                      stroke-width="1.5"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                    <path
+                      d="M13.7344 12.75V14.25C13.7344 15.0784 13.0628 15.75 12.2344 15.75H4.73438C3.90595 15.75 3.23438 15.0784 3.23438 14.25V6.75C3.23438 5.92157 3.90595 5.25 4.73438 5.25H6.23438"
+                      stroke="#333333"
+                      stroke-width="1.5"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                  Скопіювати
+                </button>
+              </div>
+
+              <div class="detail-item">
+                <span class="detail-label">Код ЄДРПОУ:</span>
+                <span class="detail-value">44591761</span>
+                <button class="copy-button">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="19"
+                    height="18"
+                    viewBox="0 0 19 18"
+                    fill="none"
+                    class="copy-icon"
+                  >
+                    <path
+                      d="M15.2344 2.25H7.73438C6.90595 2.25 6.23438 2.92157 6.23438 3.75V11.25C6.23438 12.0784 6.90595 12.75 7.73438 12.75H15.2344C16.0628 12.75 16.7344 12.0784 16.7344 11.25V3.75C16.7344 2.92157 16.0628 2.25 15.2344 2.25Z"
+                      stroke="#333333"
+                      stroke-width="1.5"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                    <path
+                      d="M13.7344 12.75V14.25C13.7344 15.0784 13.0628 15.75 12.2344 15.75H4.73438C3.90595 15.75 3.23438 15.0784 3.23438 14.25V6.75C3.23438 5.92157 3.90595 5.25 4.73438 5.25H6.23438"
+                      stroke="#333333"
+                      stroke-width="1.5"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                  Скопіювати
+                </button>
+              </div>
+              <div class="detail-item">
+                <span class="detail-label">Код Банку-одержувача:</span>
+                <span class="detail-value">325365</span>
+                <button class="copy-button">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="19"
+                    height="18"
+                    viewBox="0 0 19 18"
+                    fill="none"
+                    class="copy-icon"
+                  >
+                    <path
+                      d="M15.2344 2.25H7.73438C6.90595 2.25 6.23438 2.92157 6.23438 3.75V11.25C6.23438 12.0784 6.90595 12.75 7.73438 12.75H15.2344C16.0628 12.75 16.7344 12.0784 16.7344 11.25V3.75C16.7344 2.92157 16.0628 2.25 15.2344 2.25Z"
+                      stroke="#333333"
+                      stroke-width="1.5"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                    <path
+                      d="M13.7344 12.75V14.25C13.7344 15.0784 13.0628 15.75 12.2344 15.75H4.73438C3.90595 15.75 3.23438 15.0784 3.23438 14.25V6.75C3.23438 5.92157 3.90595 5.25 4.73438 5.25H6.23438"
+                      stroke="#333333"
+                      stroke-width="1.5"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                  Скопіювати
+                </button>
+              </div>
+              <div class="detail-item">
+                <span class="detail-label">Рахунок одержувача:</span>
+                <span class="detail-value">UA103253650000000260080034583</span>
+                <button class="copy-button">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="19"
+                    height="18"
+                    viewBox="0 0 19 18"
+                    fill="none"
+                    class="copy-icon"
+                  >
+                    <path
+                      d="M15.2344 2.25H7.73438C6.90595 2.25 6.23438 2.92157 6.23438 3.75V11.25C6.23438 12.0784 6.90595 12.75 7.73438 12.75H15.2344C16.0628 12.75 16.7344 12.0784 16.7344 11.25V3.75C16.7344 2.92157 16.0628 2.25 15.2344 2.25Z"
+                      stroke="#333333"
+                      stroke-width="1.5"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                    <path
+                      d="M13.7344 12.75V14.25C13.7344 15.0784 13.0628 15.75 12.2344 15.75H4.73438C3.90595 15.75 3.23438 15.0784 3.23438 14.25V6.75C3.23438 5.92157 3.90595 5.25 4.73438 5.25H6.23438"
+                      stroke="#333333"
+                      stroke-width="1.5"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                  Скопіювати
+                </button>
+              </div>
+              <div class="detail-item">
+                <span class="detail-label">Призначення платежу:</span>
+                <span class="detail-value">Благодійний внесок</span>
+                <button class="copy-button">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="19"
+                    height="18"
+                    viewBox="0 0 19 18"
+                    fill="none"
+                    class="copy-icon"
+                  >
+                    <path
+                      d="M15.2344 2.25H7.73438C6.90595 2.25 6.23438 2.92157 6.23438 3.75V11.25C6.23438 12.0784 6.90595 12.75 7.73438 12.75H15.2344C16.0628 12.75 16.7344 12.0784 16.7344 11.25V3.75C16.7344 2.92157 16.0628 2.25 15.2344 2.25Z"
+                      stroke="#333333"
+                      stroke-width="1.5"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                    <path
+                      d="M13.7344 12.75V14.25C13.7344 15.0784 13.0628 15.75 12.2344 15.75H4.73438C3.90595 15.75 3.23438 15.0784 3.23438 14.25V6.75C3.23438 5.92157 3.90595 5.25 4.73438 5.25H6.23438"
+                      stroke="#333333"
+                      stroke-width="1.5"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                  Скопіювати
+                </button>
+              </div>
+              <div class="copy-all">
+                <button class="copy-all-button">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="19"
+                    height="18"
+                    viewBox="0 0 19 18"
+                    fill="none"
+                    class="copy-icon"
+                  >
+                    <path
+                      d="M15.2344 2.25H7.73438C6.90595 2.25 6.23438 2.92157 6.23438 3.75V11.25C6.23438 12.0784 6.90595 12.75 7.73438 12.75H15.2344C16.0628 12.75 16.7344 12.0784 16.7344 11.25V3.75C16.7344 2.92157 16.0628 2.25 15.2344 2.25Z"
+                      stroke="#333333"
+                      stroke-width="1.5"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                    <path
+                      d="M13.7344 12.75V14.25C13.7344 15.0784 13.0628 15.75 12.2344 15.75H4.73438C3.90595 15.75 3.23438 15.0784 3.23438 14.25V6.75C3.23438 5.92157 3.90595 5.25 4.73438 5.25H6.23438"
+                      stroke="#333333"
+                      stroke-width="1.5"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                  СКОПІЮВАТИ ВСЕ
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- <div style="padding-top: 100px"></div> -->
+      </div>
+      <div class="help-section">
+        <h2>Lorem Ipsum has been</h2>
+        <p class="description">
+          Lorem Ipsum is simply dummy text of the printing and typesetting
+          industry.
+        </p>
+      </div>
+      <div class="outer-container">
+        <div class="gallery-container">
+          <div
+            class="cards-container"
+            style="background-image: url('/img/2.png')"
+          >
+            <div class="cards-content">
+              <h2>LOREM IPSUM HAS BEEN THE INDUSTRY'S STANDARD</h2>
+              <a href="#" class="button"
+                >ПЕРЕГЛЯНУТИ
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="15"
+                  height="14"
+                  viewBox="0 0 15 14"
+                  fill="none"
+                >
+                  <path
+                    d="M5.72266 2.38L9.52599 6.18333C9.97516 6.6325 9.97516 7.3675 9.52599 7.81666L5.72266 11.62"
+                    stroke="#F3B745"
+                    stroke-width="1.5"
+                    stroke-miterlimit="10"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </a>
+            </div>
+          </div>
+          <div
+            class="cards-container"
+            style="background-image: url('/img/2.png')"
+          >
+            <div class="cards-content">
+              <h2>LOREM IPSUM HAS BEEN THE INDUSTRY'S STANDARD</h2>
+              <a href="#" class="button"
+                >ПЕРЕГЛЯНУТИ
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="15"
+                  height="14"
+                  viewBox="0 0 15 14"
+                  fill="none"
+                >
+                  <path
+                    d="M5.72266 2.38L9.52599 6.18333C9.97516 6.6325 9.97516 7.3675 9.52599 7.81666L5.72266 11.62"
+                    stroke="#F3B745"
+                    stroke-width="1.5"
+                    stroke-miterlimit="10"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </a>
+            </div>
+          </div>
+          <div
+            class="cards-container"
+            style="background-image: url('/img/2.png')"
+          >
+            <div class="cards-content">
+              <h2>LOREM IPSUM HAS BEEN THE INDUSTRY'S STANDARD</h2>
+              <a href="#" class="button"
+                >ПЕРЕГЛЯНУТИ
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="15"
+                  height="14"
+                  viewBox="0 0 15 14"
+                  fill="none"
+                >
+                  <path
+                    d="M5.72266 2.38L9.52599 6.18333C9.97516 6.6325 9.97516 7.3675 9.52599 7.81666L5.72266 11.62"
+                    stroke="#F3B745"
+                    stroke-width="1.5"
+                    stroke-miterlimit="10"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </a>
+            </div>
+          </div>
+          <div
+            class="cards-container"
+            style="background-image: url('/img/2.png')"
+          >
+            <div class="cards-content">
+              <h2>LOREM IPSUM HAS BEEN THE INDUSTRY'S STANDARD</h2>
+              <a href="#" class="button"
+                >ПЕРЕГЛЯНУТИ
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="15"
+                  height="14"
+                  viewBox="0 0 15 14"
+                  fill="none"
+                >
+                  <path
+                    d="M5.72266 2.38L9.52599 6.18333C9.97516 6.6325 9.97516 7.3675 9.52599 7.81666L5.72266 11.62"
+                    stroke="#F3B745"
+                    stroke-width="1.5"
+                    stroke-miterlimit="10"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="card-wrapper">
+        <div class="donation-card" style="background-image: url('/img/5.png')">
+          <div class="donation-content">
+            <h2>When an unknown printer took a galley of type</h2>
+            <p>Lorem Ipsum has been the industry's standard dummy text</p>
+            <a href="#" class="donation-button">GIVE NOW</a>
+          </div>
+        </div>
+        <div class="donation-card" style="background-image: url('/img/5.png')">
+          <div class="donation-content">
+            <h2>When an unknown printer took a galley of type</h2>
+            <p>Lorem Ipsum has been the industry's standard dummy text</p>
+            <a href="#" class="donation-button">GIVE NOW</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
