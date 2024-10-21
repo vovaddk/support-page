@@ -601,6 +601,8 @@ p {
   .section,
   .section.reverse {
     flex-direction: column;
+    padding: 0;
+    padding-top: 20px;
   }
   .section-content {
     display: flex;
@@ -634,8 +636,11 @@ p {
     width: 335px !important;
     height: 100% !important;
     padding: 0;
-    padding-left: 32px;
+    /* padding-left: 32px; */
     border-radius: 0px !important;
+  }
+  .img-2 {
+    padding-bottom: 48px;
   }
   .video-image,
   .video-wrapper {
@@ -646,6 +651,7 @@ p {
   .help-section {
     width: 335px;
     padding-top: 0;
+    padding-left: 0;
     padding-right: 0 !important;
   }
 
@@ -663,6 +669,7 @@ p {
     font-style: normal;
     font-weight: 400;
     line-height: 24px; /* 150% */
+    padding-bottom: 24px;
   }
 
   .cards,
@@ -697,8 +704,7 @@ p {
   }
   .support-container {
     padding: 0;
-
-    padding-left: 20px;
+    /* padding-left: 20px; */
     padding-right: 20px;
     width: 335px;
     height: 973px;
@@ -706,8 +712,9 @@ p {
   }
 
   .support-container h2 {
-    padding-left: 50px;
+    padding-left: 25px;
     font-size: 24px;
+    text-align: center;
     font-style: normal;
     font-weight: 500;
     line-height: 32px;
