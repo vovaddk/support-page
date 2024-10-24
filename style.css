@@ -166,6 +166,7 @@ p {
   line-height: 28px; /* 155.556% */
   opacity: 0.5;
 }
+
 .video-wrapper {
   position: relative; /* Для правильного позиціонування play-button */
   display: inline-block; /* Для збереження розмірів відео */
@@ -445,157 +446,6 @@ p {
   outline: none; /* Прибираємо контур (outline) */
   cursor: pointer; /* Додаємо зміну курсора на кнопку */
 }
-.outer-container {
-  display: flex;
-  justify-content: center; /* Центрування по горизонталі */
-  align-items: center; /* Центрування по вертикалі */
-  box-sizing: border-box; /* Врахування padding для контейнера */
-}
-
-.gallery-container {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 20px;
-  max-width: 1200px;
-  width: 100%;
-  padding: 20px;
-  box-sizing: border-box; /* Врахування padding для контейнера */
-}
-
-.cards-container {
-  position: relative;
-  height: 300px;
-  background-size: cover;
-  background-position: center;
-  overflow: hidden;
-}
-
-.cards-content {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  color: #fff;
-  text-shadow: 0 2px 5px rgba(0, 0, 0, 0.7);
-  text-align: center;
-}
-
-.cards-content h2 {
-  width: auto;
-  margin-bottom: 0;
-  padding-bottom: 16px;
-  /* max-height: 64px; */
-  padding-left: 100px;
-  padding-right: 100px;
-  align-self: stretch;
-  color: #fff;
-  text-align: center;
-  font-family: "Roboto", sans-serif;
-  font-size: 24px;
-  font-style: normal;
-  font-weight: 700;
-  line-height: 32px; /* 133.333% */
-  text-transform: uppercase;
-}
-
-.button {
-  text-decoration: none;
-  color: #f3b745;
-  font-family: "Gill Sans Nova", sans-serif;
-  font-size: 14px;
-  font-style: normal;
-  font-weight: 600;
-  line-height: 20px; /* 142.857% */
-  letter-spacing: 0.7px;
-  text-transform: uppercase;
-}
-
-.button:hover {
-  text-decoration: underline;
-}
-.button svg {
-  width: 14px;
-  height: 14px;
-}
-.card-wrapper {
-  display: flex;
-  gap: 20px;
-  justify-content: center;
-  align-items: center;
-  padding: 20px;
-}
-
-.donation-card {
-  position: relative;
-  width: 608px;
-  height: 400px;
-  flex-shrink: 0;
-  background-size: cover;
-  background-position: center;
-  overflow: hidden;
-  display: flex;
-  align-items: flex-end;
-}
-
-.donation-content {
-  display: flex;
-  max-width: 544px;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 16px;
-  padding: 0 32px 32px 32px;
-}
-
-.donation-content h2 {
-  width: 420px;
-  height: 88px;
-  color: #fff;
-  font-family: "Roboto", sans-serif;
-  font-size: 32px;
-  font-style: normal;
-  font-weight: 500;
-  line-height: 44px; /* 137.5% */
-  margin: 0;
-}
-
-.donation-content p {
-  color: #fff;
-  margin: 0;
-  font-family: "Roboto", sans-serif;
-  font-size: 16px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 24px; /* 150% */
-  padding-bottom: 5px;
-}
-
-.donation-button {
-  text-decoration: none;
-  display: flex;
-  padding: 17.5px 31.69px 17.5px 32.31px;
-  justify-content: center;
-  align-items: center;
-  border-radius: 8px;
-  background: #f3b745;
-}
-.donation-content a {
-  color: #30485f;
-  font-family: "Roboto", sans-serif;
-  font-size: 14px;
-  font-style: normal;
-  font-weight: 700;
-  line-height: 21px; /* 150% */
-  letter-spacing: 0.7px;
-  text-transform: uppercase;
-}
-.donation-button:hover {
-  background-color: #e0a639;
-}
 
 @media (max-width: 768px) {
   .support-image {
@@ -859,5 +709,437 @@ p {
     margin: 0;
     padding-bottom: 24px;
     padding-top: 24px;
+  }
+}
+.support-section {
+  text-align: center;
+  padding: 40px 20px;
+  background-color: #ffffff;
+}
+.support-h2 {
+  color: #30485f;
+  font-family: "Roboto", sans-serif;
+  font-size: 40px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 56px;
+}
+
+.support-p {
+  color: #30485f;
+  text-align: center;
+  font-family: "Roboto", sans-serif;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 28px; /* 155.556% */
+  opacity: 0.5;
+}
+.outer-container {
+  display: flex;
+  justify-content: center; /* Центрування по горизонталі */
+  align-items: center; /* Центрування по вертикалі */
+  box-sizing: border-box; /* Врахування padding для контейнера */
+}
+
+.gallery-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  max-width: 1200px;
+  width: 100%;
+  padding: 20px;
+  box-sizing: border-box; /* Врахування padding для контейнера */
+}
+
+.cards-container {
+  position: relative;
+  height: 300px;
+  background-size: cover;
+  background-position: center;
+  overflow: hidden;
+}
+
+.cards-content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  text-shadow: 0 2px 5px rgba(0, 0, 0, 0.7);
+  text-align: center;
+}
+
+.cards-content h2 {
+  width: auto;
+  margin-bottom: 0;
+  padding-bottom: 16px;
+  /* max-height: 64px; */
+  padding-left: 100px;
+  padding-right: 100px;
+  align-self: stretch;
+  color: #fff;
+  text-align: center;
+  font-family: "Roboto", sans-serif;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 32px; /* 133.333% */
+  text-transform: uppercase;
+}
+
+.sup-btn {
+  text-decoration: none;
+  color: #f3b745;
+  font-family: "Gill Sans Nova", sans-serif;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 20px; /* 142.857% */
+  letter-spacing: 0.7px;
+  text-transform: uppercase;
+}
+
+.sup-btn:hover {
+  text-decoration: underline;
+}
+.sup-btn svg {
+  width: 14px;
+  height: 14px;
+}
+.card-wrapper {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.donation-card {
+  position: relative;
+  width: 608px;
+  height: 400px;
+  flex-shrink: 0;
+  background-size: cover;
+  background-position: center;
+  overflow: hidden;
+  display: flex;
+  align-items: flex-end;
+}
+.backgrounds-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+}
+.donation-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    0deg,
+    rgba(48, 72, 95, 0.4) 0%,
+    rgba(48, 72, 95, 0.4) 100%
+  );
+  z-index: 1; /* Градієнт поверх зображення, але під контентом */
+}
+.donation-content {
+  display: flex;
+  max-width: 544px;
+  z-index: 2;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 16px;
+  padding: 0 32px 32px 32px;
+}
+
+.donation-content h2 {
+  width: 420px;
+  height: 88px;
+  color: #fff;
+  font-family: "Roboto", sans-serif;
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 44px; /* 137.5% */
+  margin: 0;
+}
+
+.donation-content p {
+  color: #fff;
+  margin: 0;
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 24px; /* 150% */
+  padding-bottom: 5px;
+}
+
+.donation-button {
+  text-decoration: none;
+  display: flex;
+  padding: 17.5px 31.69px 17.5px 32.31px;
+  justify-content: center;
+  align-items: center;
+  border-radius: 8px;
+  background: #f3b745;
+}
+.donation-content a {
+  color: #30485f;
+  font-family: "Roboto", sans-serif;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 21px; /* 150% */
+  letter-spacing: 0.7px;
+  text-transform: uppercase;
+}
+.donation-button:hover {
+  background-color: #e0a639;
+}
+@media (max-width: 768px) {
+  .support-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Вирівнювання по вертикалі */
+    align-items: center; /* Вирівнювання по горизонталі */
+    text-align: center;
+    padding: 0;
+    background-color: #ffffff;
+  }
+
+  .support-h2 {
+    min-width: 245px;
+    max-height: 32px;
+    color: #30485f;
+    font-family: "Roboto", sans-serif;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 32px; /* 133.333% */
+  }
+
+  .support-p {
+    max-width: 306px;
+    max-height: 48px;
+    color: #30485f;
+    text-align: center;
+    font-family: "Roboto", sans-serif;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 24px; /* 150% */
+    opacity: 0.8;
+  }
+  .outer-container {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    justify-content: center; /* Центрування по горизонталі */
+    align-items: center; /* Центрування по вертикалі */
+    box-sizing: border-box; /* Врахування padding для контейнера */
+  }
+
+  .gallery-container {
+    display: grid;
+    grid-template-columns: 1fr; /* Одна колонка */
+    gap: 20px;
+    /* max-width: 1200px; */
+    width: 100%;
+    padding: 20px;
+    box-sizing: border-box; /* Врахування padding для контейнера */
+  }
+
+  .cards-container {
+    position: relative;
+    min-width: 335px; /* Ширина для карток */
+    min-height: 230px;
+    background-size: cover;
+    background-position: center;
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+  }
+  .background-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Забезпечує покриття всього контейнера зображенням */
+    z-index: 0; /* Зображення на задньому плані */
+  }
+
+  .cards-container::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(
+      0deg,
+      rgba(0, 0, 0, 0.4) 0%,
+      rgba(0, 0, 0, 0.4) 100%
+    ); /* Градієнт поверх зображення */
+    z-index: 1; /* Градієнт на передньому плані */
+  }
+  .cards-content {
+    position: absolute;
+    z-index: 2;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.7);
+    text-align: center;
+  }
+
+  .cards-content h2 {
+    min-width: 283px;
+    padding: 0;
+    align-self: stretch;
+    color: #fff;
+    text-align: center;
+    font-family: "Roboto", sans-serif;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 28px; /* 140% */
+    text-transform: uppercase;
+    margin-bottom: 16px;
+  }
+
+  .sup-btn {
+    display: flex;
+    width: 128px;
+    height: 20px;
+    z-index: 2;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    color: #f3b745;
+    font-family: "Gill Sans Nova", sans-serif;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 20px; /* 142.857% */
+    letter-spacing: 0.7px;
+    text-transform: uppercase;
+  }
+
+  .sup-btn:hover {
+    text-decoration: underline;
+  }
+
+  .sup-btn svg {
+    width: 14px;
+    height: 14px;
+  }
+  .card-wrapper {
+    display: flex;
+    flex-direction: column; /* Вертикальне вирівнювання карток */
+    gap: 20px; /* Відстань між картками */
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+  }
+
+  .donation-card {
+    position: relative;
+    width: 335px;
+    height: 320px;
+    flex-shrink: 0;
+    background-size: cover;
+    background-position: center;
+    overflow: hidden;
+    display: flex;
+    align-items: flex-end;
+  }
+
+  .donation-content {
+    display: flex;
+    z-index: 1;
+    max-width: 544px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+    padding: 0 32px 32px 32px;
+  }
+
+  .donation-content h2 {
+    max-width: 295px;
+    max-height: 64px;
+    color: #fff;
+    font-family: "Roboto", sans-serif;
+    font-size: 24px;
+    text-align: center;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 32px;
+    margin: 0;
+  }
+
+  .donation-content p {
+    color: #fff;
+    margin: 0;
+    text-align: center;
+    font-family: "Roboto", sans-serif;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 24px;
+    padding-bottom: 5px;
+  }
+
+  .donation-button {
+    text-decoration: none;
+    display: flex;
+    padding: 17.5px 31.69px 17.5px 32.31px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 8px;
+    background: #f3b745;
+    align-self: center; /* Центрування кнопки */
+  }
+  .backgrounds-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0; /* Зображення під контентом */
+  }
+
+  .donation-button:hover {
+    background-color: #e0a639;
+  }
+  .donation-content a {
+    color: #30485f;
+    font-family: "Roboto", sans-serif;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 21px; /* 150% */
+    letter-spacing: 0.7px;
+    text-transform: uppercase;
   }
 }
